@@ -1,5 +1,5 @@
 let button = document.getElementById('sortear');
-let vidasRestantes = 10;
+let vidasRestantes = 5;
 let resultado = Math.floor(Math.random() * (100 - 1 + 1) + 1);
 let vidasElement = document.getElementById('vidas');
 let numero = parseInt(document.getElementById('min').value);
@@ -75,7 +75,7 @@ function atualizarVidas() {
         vidasElement.appendChild(vidaElement);
     }
 
-    for (let i = 0; i < 10 - vidasRestantes; i++) {
+    for (let i = 0; i < 5 - vidasRestantes; i++) {
         const vidaVaziaElement = document.createElement('span');
         vidaVaziaElement.className = 'vida-vazia';
         vidaVaziaElement.textContent = '🖤';
