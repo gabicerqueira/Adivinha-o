@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivinhação</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="ponto-de-interrogacao.png">
+</head>
+
+<body>
+
+    <section class="sorteio">
+        <div class="fundo">
+
+            <article id="instrucoes"></article>
+            <p class="titulo" id="titulo">Adivinhe um número de 1 á 100</p>
+            <div id="vidas">
+                Vidas:
+                <span class="vida">❤️</span>
+                <span class="vida">❤️</span>
+                <span class="vida">❤️</span>
+                <span class="vida">❤️</span>
+                <span class="vida">❤️</span>
+            </div>
+            <p class="numero" id="numero"></p>
+
+            <div id="tudo">
+                <div class="entradas">
+
+                    <div class="entrada">
+                        <label for="min"></label>
+                        <input type="number" id="min" name="min" min='1' max='100'>
+                    </div>
+
+                </div>
+
+                <div class="retangulo">
+                    <button id="sortear">
+                        <p class="nome">Tente sua sorte</p>
+                    </button>
+
+                    <div class="final">
+                        <div id="resultado">Informe um número</div>
+                    </div>
+                </div>
+
+
+                <div id="resultado2"></div>
+            </div>
+
+            <a href="index.html"><button id="tenteNovamente" style="display: none;">
+                    <p class="nome">Tente novamente</p>
+                </button></a>
+
+
+
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
