@@ -38,7 +38,7 @@ button.addEventListener('click', function() {
         return;
     }
 
-    document.getElementById('resultado2').textContent = resultado;
+    // document.getElementById('resultado2').textContent = resultado;
     vidas();
 });
 
