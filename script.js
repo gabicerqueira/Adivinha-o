@@ -6,22 +6,19 @@ let numero = parseInt(document.getElementById('min').value);
 let resultadoFinal = document.getElementById('numero');
 let tudo = document.getElementById('tudo');
 let tenteNovamente = document.getElementById('tenteNovamente');
-let titulo = document.getElementById('titulo'); // Mova a declaração aqui
-
+let titulo = document.getElementById('titulo');
 
 button.addEventListener('click', function() {
-    // Verifica se o jogo já terminou (ou seja, o jogador já acertou)
     if (vidasRestantes <= 0 || isNaN(resultado)) {
         return;
     }
 
     let numero = parseInt(document.getElementById('min').value);
 
-    if(min.value <1 || min.value>100){
+    if (min.value < 1 || min.value > 100) {
         alert("Informe um número válido");
         return false;
     }
-
 
     if (isNaN(resultado)) {
         resultado = 'Informe um número'
@@ -33,14 +30,15 @@ button.addEventListener('click', function() {
         document.querySelector('#resultado').innerHTML = `Maior que ${numero}`
     } else if (numero == resultado) {
         titulo.textContent = "Você acertou!";
-        resultadoFinal.textContent = "Você acertou em "+vidasRestantes+" chances."+" O número era " + resultado+".";
+        resultadoFinal.textContent = "Você acertou em " + (5 - vidasRestantes + 1) + " chances." + " O número era " + resultado + ".";
         tudo.style.display = 'none';
         tenteNovamente.style.display = 'block';
         vidasElement.style.display = 'none';
-        instrucoes.style.display = 'none'
+        instrucoes.style.display = 'none';
+        return;
     }
 
-    // document.getElementById('resultado2').textContent = resultado;
+    document.getElementById('resultado2').textContent = resultado;
     vidas();
 });
 
@@ -51,13 +49,12 @@ function vidas() {
     }
 
     if (vidasRestantes >= 0) {
-        // Caso ainda existam vidas restantes
-        instrucoes.textContent = "Você errou, mas ainda tem " + vidasRestantes + " vida(s) restante(s).";
+        instrucoes.textContent = "Você errou, e ainda tem " + vidasRestantes + " vida(s) restante(s).";
     }
-    else if (vidasRestantes === 0) { // Corrija a comparação aqui
-        // Caso tenha perdido todas as vidas
+
+    if (vidasRestantes === 0 && numero != resultado) {
         titulo.textContent = "Fim de Jogo!";
-        resultadoFinal.textContent = "Suas vidas acabaram. O número era " + resultado+".";
+        resultadoFinal.textContent = "Suas vidas acabaram. O número era " + resultado + ".";
         tudo.style.display = 'none';
         tenteNovamente.style.display = 'block';
         vidasElement.style.display = 'none';
